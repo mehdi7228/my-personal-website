@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate="title">Mehdi's Personal Site</title>
+    <script>
+        if (localStorage.getItem('darkMode') === 'enabled') {
+          document.documentElement.classList.add('dark-mode');
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agu+Display&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+CO+Guides&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agu+Display&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+CO+Guides&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agu+Display&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+CO+Guides&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <!-- Add Bootstrap CSS link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link rel="stylesheet" href="./styles/main.min.css">
+
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar bg-body-tertiary fixed-top" aria-label="Light offcanvas navbar">
+        <div class="container-fluid">
+            <!-- Language Dropdown -->
+            <div class="dropdown" id="language-dropdown">
+                <button class="btn btn dropdown-toggle" type="button" id="dropdownLanguage" data-bs-toggle="dropdown" aria-expanded="false">
+                    Language
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownLanguage">
+                    <li><a class="dropdown-item" href="#" data-lang="en">🇬🇧 ENG</a></li>
+                    <li><a class="dropdown-item" href="#" data-lang="fa">🇮🇷 فارسی</a></li>
+                    <li><a class="dropdown-item" href="#" data-lang="tr">🇹🇷 TÜR</a></li>
+                </ul>
+            </div>
+
+            <!-- Sidebar Toggle Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbarLight" aria-controls="offcanvasNavbarLight" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Sidebar -->
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbarLight" aria-labelledby="offcanvasNavbarLightLabel">
+                <div class="offcanvas-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-start flex-grow-1 pe-3">
+                        <li class="nav-item"><a data-translate="side1" class="nav-link active" href="#home">Home</a></li>
+                        <li class="nav-item"><a data-translate="side2" class="nav-link" href="#about">About</a></li>
+                        <li class="nav-item"><a data-translate="side3" class="nav-link" href="#education">Education</a></li>
+                        <li class="nav-item"><a data-translate="side4" class="nav-link" href="#skills">Skills</a></li>
+                        <li class="nav-item"><a data-translate="side5" class="nav-link" href="#portfolio">Portfolio</a></li>
+                        <li class="nav-item"><a data-translate="side6" class="nav-link" href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="profile-section">
+    <div id="home" class="title position-relative">
+        <img class="image" src="./images/theme1.png" alt="background image" width="100%" height="700px">
+        
+        <!-- Profile Picture -->
+        <div class="profile-container">
+            <img class="profile-image" src="./images/profile.png" alt="profile picture">
+        </div>
+        
+        <!-- Header Text -->
+        <div class="header-text">
+            <h1>Mehdi</h1>
+            <h2 class="programmer"> <span class="pro">Frontend</span> Developer & Designer</h2>
+        </div>
+    </div>
+  </section>
+
+    <!-- <hr> -->
+
+    <!-- dark mode Button -->
+  <button id="darkModeToggle" class="btn btn-dark mode-toggle">
+    <i class="bi bi-moon-fill" id="toggleIcon"></i>
+  </button>
+
+<!-- About Me Section -->
+
+<section class="container abaut-me-section">
+<div id="about" class="about-me">
+  <h2 data-translate="aboutTitle" class="section-title">ABOUT ME</h2>
+  <div class="about-container">
+    <!-- About Me Content -->
+    <div class="about-content">
+      <p data-translate="aboutP1">
+        Hi, I’m Mehdi Khodaiee, a passionate Frontend Developer with a knack for creating modern, responsive, and user-friendly websites. With a strong foundation in HTML, CSS, and JavaScript, I specialize in building engaging interfaces that deliver seamless user experiences.
+      </p>
+      <p data-translate="aboutP2">
+        I’m also familiar with Python and have experience handling small to medium backend tasks using Node.js. While my primary focus is on frontend development, I can tackle backend challenges when needed, ensuring end-to-end functionality for projects.
+      </p>
+      <p data-translate="aboutP3">
+        Before diving into web development, I worked in interior design, which helped me develop a keen eye for detail and aesthetics—skills I now use to craft visually appealing web designs.
+      </p>
+      <p data-translate="aboutP4">
+        Beyond coding, I’m passionate about sports, especially football. Watching movies and reading books are also among my favorite pastimes, as they inspire my creativity and help me approach problem-solving from fresh perspectives.      </p>
+      <p data-translate="aboutP5">
+        I’m currently seeking opportunities to contribute my skills to exciting projects or collaborate with teams to create amazing digital experiences. If you’re looking for a dedicated developer to bring your ideas to life, feel free to get in touch!
+      </p>
+    </div>
+
+    <!-- Personal Info Box -->
+    <div class="personal-info">
+      <ul>
+        <li class="info-box"><strong class="info-box">Email:</strong> mehdikhodaiee@gmail.com</li>
+        <li class="info-box"><strong class="info-box">Date of Birth:</strong> March 21, 1989</li>
+        <li class="info-box"><strong class="info-box">Location:</strong> Izmir, Turkey</li>
+        <li class="info-box"><strong class="info-box">LinkedIn:</strong> <a href="https://linkedin.com/in/your-profile" target="_blank">View Profile</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+</section>
+
+    <hr>
+
+    <!-- education Section -->
+<section id="education" class="container education-section">
+  <h2 data-translate="educationTitle" class="section-title">EDUCATION</h2>
+  <div class="education-container">
+      <!-- Card 1 -->
+      <div class="education-card">
+          <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-mortarboard" viewBox="0 0 16 16">
+              <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917zM8 8.46 1.758 5.965 8 3.052l6.242 2.913z"/>
+              <path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466zm-.068 1.873.22-.748 3.496 1.311a.5.5 0 0 0 .352 0l3.496-1.311.22.748L8 12.46z"/>
+            </svg>
+          </div>
+          <div class="details">
+              <h3 data-translate="educationH31">Bachelor's in Electrical Engineering</h3>
+              <p data-translate="educationP1">Electronics Specialization - Zarandieh saveh University</p>
+              <span class="date">2008 - 2014</span>
+          </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="education-card">
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-mortarboard" viewBox="0 0 16 16">
+            <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917zM8 8.46 1.758 5.965 8 3.052l6.242 2.913z"/>
+            <path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466zm-.068 1.873.22-.748 3.496 1.311a.5.5 0 0 0 .352 0l3.496-1.311.22.748L8 12.46z"/>
+          </svg>
+        </div>
+        <div class="details">
+            <h3 data-translate="educationH33">Software Development Certification</h3>
+            <p data-translate="educationP3">Completed on Mojtama fani Tehran (with License)</p>
+            <span class="date">2021</span>
+        </div>
+    </div>
+
+      <!-- Card 3 -->
+      <div class="education-card">
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-mortarboard" viewBox="0 0 16 16">
+            <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917zM8 8.46 1.758 5.965 8 3.052l6.242 2.913z"/>
+            <path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466zm-.068 1.873.22-.748 3.496 1.311a.5.5 0 0 0 .352 0l3.496-1.311.22.748L8 12.46z"/>
+          </svg>
+        </div>
+        <div class="details">
+            <h3 data-translate="educationH32">Web Development Certification</h3>
+            <p data-translate="educationP2">Completed on Udemy (with License)</p>
+            <span class="date">2023</span>
+        </div>
+    </div>
+  </div>
+</section>
+
+      <hr>
+
+          <!-- skills -->
+
+    <section id="skills" class="container">
+    <div class="skills-section">
+        <h2 data-translate="skillsTitle" class="section-title">SKILLS</h2>
+
+        <div class="skill">
+            <span class="skill-name">HTML</span>
+            <div class="progress-bar">
+                <div class="progress" data-percentage="95"></div>
+            </div>
+            <span class="percentage">95%</span>
+        </div>
+    
+        <div class="skill">
+            <span class="skill-name">CSS</span>
+            <div class="progress-bar">
+                <div class="progress" data-percentage="90"></div>
+            </div>
+            <span class="percentage">90%</span>
+        </div>
+    
+        <div class="skill">
+            <span class="skill-name">JavaScript</span>
+            <div class="progress-bar">
+                <div class="progress" data-percentage="80"></div>
+            </div>
+            <span class="percentage">80%</span>
+        </div>
+
+        <div class="skill">
+            <span class="skill-name">Node</span>
+            <div class="progress-bar">
+                <div class="progress" data-percentage="60"></div>
+            </div>
+            <span class="percentage">60%</span>
+        </div>
+
+        <div class="skill">
+            <span class="skill-name">Express</span>
+            <div class="progress-bar">
+                <div class="progress" data-percentage="60"></div>
+            </div>
+            <span class="percentage">60%</span>
+        </div>
+
+        <div class="skill">
+            <span class="skill-name">SQL</span>
+            <div class="progress-bar">
+                <div class="progress" data-percentage="50"></div>
+            </div>
+            <span class="percentage">50%</span>
+        </div>
+
+        <div class="skill">
+            <span class="skill-name">UI/UX</span>
+            <div class="progress-bar">
+                <div class="progress" data-percentage="80"></div>
+            </div>
+            <span class="percentage">80%</span>
+        </div>
+
+        <div class="skill">
+            <span class="skill-name">Python</span>
+            <div class="progress-bar">
+                <div class="progress" data-percentage="60"></div>
+            </div>
+            <span class="percentage">60%</span>
+        </div>
+
+        <h2 data-translate="languageTitle" class="section-title">LANGUAGES</h2>
+
+        <div class="skill">
+            <span class="skill-name">English</span>
+            <div class="progress-bar">
+                <div class="progress" data-percentage="90"></div>
+            </div>
+            <span class="percentage">90%</span>
+        </div>
+    
+        <div class="skill">
+            <span class="skill-name">Türkçe</span>
+            <div class="progress-bar">
+                <div class="progress" data-percentage="50"></div>
+            </div>
+            <span class="percentage">50%</span>
+        </div>
+    
+        <div class="skill">
+            <span class="skill-name">Farsi</span>
+            <div class="progress-bar">
+                <div class="progress" data-percentage="100"></div>
+            </div>
+            <span class="percentage">100%</span>
+        </div>
+    </div>
+    </section>
+
+    <hr>
+
+        <!-- portfolio Section -->
+        <section id="portfolio" class="container portfolio-section">
+            <h2 data-translate="portfolioTitle" class="section-title">PORTFOLIO</h2>
+            <div class="portfolio-container">
+              <!-- Project 1 -->
+<div class="project">
+  <div class="project-image">
+    <img src="./images/walkwell1.png" alt="E-commerce Store">
+  </div>
+  <div class="project-details">
+    <h3 data-translate="portfolioH31">E-commerce Store</h3>
+    <p data-translate="portfolioP11">As part of my portfolio, I developed an e-commerce website designed to deliver a seamless and user-friendly online shopping experience. This project allowed me to leverage my skills in frontend development, focusing on creating an intuitive, modern, and responsive design.</p>
+
+    <h4 data-translate="h411">Key Features:</h4>
+    <ul>
+      <li data-translate="keyli11">Responsive Design: The website is fully optimized for various devices, including mobile phones, tablets, and desktops, ensuring a smooth user experience across all screen sizes.</li>
+      <li data-translate="keyli12">Interactive UI: I implemented dynamic elements such as product filters, image galleries, and an easy-to-navigate shopping cart, which enhance usability and engagement.</li>
+      <li data-translate="keyli13">Advanced Styling with CSS & JavaScript: I utilized modern CSS techniques, including Flexbox and CSS Grid, to create a clean layout. JavaScript was used to add interactive features, such as real-time updates to the cart and product availability.</li>
+      <li data-translate="keyli14">Product Management: The site simulates the management of product data, including descriptions, images, prices, and availability, which I integrated into a user-friendly interface.</li>
+      <li data-translate="keyli15">Smooth Checkout Process: A streamlined checkout process was created, making the journey from product selection to purchase as frictionless as possible for the user.</li>
+    </ul>
+
+    <h4 data-translate="h412">Technologies Used:</h4>
+    <ul>
+      <li data-translate="technoli11">HTML5 for semantic markup and SEO optimization.</li>
+      <li data-translate="technoli12">CSS3 for layout, styling, and animations.</li>
+      <li data-translate="technoli13">JavaScript to enable interactivity and dynamic content updates.</li>
+      <li data-translate="technoli14">Bootstrap for responsive grid design, making it quick and efficient to adapt to various screen sizes.</li>
+    </ul>
+
+    <p data-translate="portfolioP12">This project demonstrates my ability to design and implement a complete e-commerce system, from the front-end interface to the user interactions, and highlights my understanding of how modern e-commerce websites function. It is a perfect example of my skills in creating visually appealing and functional websites that meet business needs.</p>
+
+    <a href="https://mehdi7228.github.io/E-commerce-store/index.html" class="project-link" target="_blank">View Project</a>
+  </div>
+</div>
+          
+<!-- Project 2 -->
+<div class="project reverse">
+  <div class="project-image" style="float: right;">
+    <img src="./images/bits-hotel.png" alt="Hotel Promotion">
+  </div>
+  <div class="project-details">
+    <h3 data-translate="portfolioH32">Hotel Promotion Website</h3>
+    <p data-translate="portfolioP21">For this project, I developed a sleek, modern hotel promotion website designed to captivate potential guests and drive conversions. Using HTML, CSS, JavaScript, and Bootstrap, I created a responsive, visually appealing site that adapts seamlessly across various devices. The goal was to provide an intuitive user experience, highlighting the hotel’s unique offerings and allowing users to quickly find important information such as room availability, services, and contact details.</p>
+
+    <h4 data-translate="h421">Key Features:</h4>
+    <ul>
+      <li data-translate="keyli21">Responsive Design: Ensured that the website looks great on all screen sizes, from mobile devices to desktops, enhancing the user experience for a broad audience.</li>
+      <li data-translate="keyli22">Engaging Visuals: Integrated high-quality images and a clean layout to present the hotel’s atmosphere and amenities in a visually attractive manner.</li>
+      <li data-translate="keyli23">User-Friendly Navigation: Streamlined navigation structure with easy-to-find sections, ensuring users could quickly book rooms, browse offers, or get in touch with the hotel.</li>
+      <li data-translate="keyli24">Interactive Elements: Incorporated a dynamic booking form and an interactive gallery to engage visitors and make the browsing experience more interactive and enjoyable.</li>
+      <li data-translate="keyli25">SEO Optimized: Applied basic SEO practices to increase visibility and ensure the site ranks well in search engines, driving more traffic to the hotel’s online presence.</li>
+    </ul>
+
+    <p data-translate="portfolioP22">This project allowed me to enhance my skills in responsive design and user-centered development, while also demonstrating my ability to create a polished, professional website for a business in the hospitality industry.</p>
+
+    <a href="https://mehdi7228.github.io/hotel_commercials/" class="project-link" target="_blank">View Project</a>
+  </div>
+</div>
+          
+<!-- Project 3 -->
+<div class="project">
+  <div class="project-image">
+    <img src="./images/weather-app.png" alt="Weather App">
+  </div>
+  <div class="project-details">
+    <h3 data-translate="portfolioH33">Weather App</h3>
+    <p data-translate="portfolioP3">In this project, I developed a modern, responsive Weather App that provides users with real-time weather forecasts, enhancing their day-to-day planning with accurate and up-to-date information. The app uses JavaScript and API integration to pull weather data from a reliable external service, displaying it in an intuitive, user-friendly interface.</p>
+    
+    <h4 data-translate="h43">Key Features:</h4>
+    <ul>
+      <li data-translate="keyli31">Real-Time Data: The app fetches live weather data from an external API, providing users with current temperature and weather conditions in real-time.</li>
+      <li data-translate="keyli32">Responsive Design: I ensured the app is fully responsive, providing a smooth and consistent experience on both mobile devices and desktop screens.</li>
+      <li data-translate="keyli33">Clean & Modern UI: A visually appealing design with easy-to-read typography and intuitive icons makes the app both user-friendly and aesthetically pleasing.</li>
+      <li data-translate="keyli34">Forecast: The app displays the current temperature only, providing users with real-time updates to plan their day effectively.</li>
+      <li data-translate="keyli35">Location-Based Search: Users can search for weather by location, allowing for a customized experience tailored to their needs.</li>
+      <li data-translate="keyli36">Dynamic Styling: Based on the weather conditions, the app adapts its theme, displaying appropriate visuals such as sunny, rainy, or cloudy icons, giving users a more immersive experience.</li>
+    </ul>
+
+    <p data-translate="portfolioP32">This project helped me improve my skills in API integration, responsive web design, and JavaScript, while also allowing me to build a practical, real-world application with a strong focus on user experience. It’s an excellent example of how a simple, yet effective, web application can provide significant value to users.</p>
+
+    <a href="https://mehdi7228.github.io/weather_app/" class="project-link" target="_blank">View Project</a>
+  </div>
+</div>
+
+<!-- Project 4 -->
+<div class="project reverse">
+  <div class="project-image" style="float: right;">
+    <img src="./images/web-blog.png" alt="Web-blog">
+  </div>
+  <div class="project-details">
+    <h3 data-translate="portfolioH34">Web-Blog</h3>
+    <p data-translate="portfolioP4">This project is a fully responsive Web-Blog Application designed to enable users to create, browse, and share blog posts effortlessly. Built using Node.js, Express.js, and EJS, the application focuses on simplicity, performance, and an engaging user experience.</p>
+
+    <h4 data-translate="H44">Key Features:</h4>
+    <ul>
+      <li data-translate="keyli41">Dynamic Post Creation: Users can create and view blog posts, ensuring seamless interaction with the platform.</li>
+      <li data-translate="keyli42">Elegant UI Design: The application boasts a clean, minimalist design that prioritizes readability and ease of navigation.</li>
+      <li data-translate="keyli43">Responsive Layout: The blog adapts perfectly to devices of all sizes, offering an optimal experience on desktops, tablets, and smartphones.</li>
+      <li data-translate="keyli44">Category-Based Organization: Posts are visually categorized with relevant imagery, ensuring users can quickly identify the content they’re interested in.</li>
+      <li data-translate="keyli45">Custom Styling: CSS and Google Fonts were leveraged to deliver a visually pleasing and professional design.</li>
+    </ul>
+
+    <p data-translate="portfolioP42">This project allowed me to strengthen my backend skills using Node.js and Express.js, while also enhancing my ability to create dynamic views using EJS templates. It serves as a practical example of building an application that balances functionality with aesthetics, showcasing my ability to develop user-centric web solutions.</p>
+
+    <a href="https://powerful-shelf-97006-f35125567b0a.herokuapp.com/" class="project-link" target="_blank">View Project</a>
+  </div>
+</div>
+              
+<!-- Project 5 -->
+<div class="project">
+  <div class="project-image">
+    <img src="./images/drums-kit.png" alt="drums kit game">
+  </div>
+  <div class="project-details">
+    <h3 data-translate="portfolioH35">Drums-Kit Game</h3>
+    <p data-translate="portfolioP5">The Drums-Kit Game is an interactive and engaging web-based application that showcases my ability to blend JavaScript with HTML and CSS to create fun and dynamic user experiences.</p>
+
+    <h4 data-translate="h45">Key Features:</h4>
+    <ul>
+      <li data-translate="keyli51">Interactive Design: Users can play different drum sounds either by clicking on the visual drum elements or by pressing corresponding keyboard keys.</li>
+      <li data-translate="keyli52">Seamless Audio Integration: High-quality audio files are incorporated to deliver a realistic drumming experience.</li>
+      <li data-translate="keyli53">Responsive Layout: The design adapts seamlessly across devices, ensuring accessibility and enjoyment on desktops, tablets, and mobile screens.</li>
+      <li data-translate="keyli54">Animations and Feedback: Aesthetic visual feedback, such as button animations when a drum is played, enhances the overall user interaction.</li>
+      <li data-translate="keyli55">Optimized Performance: Clean and efficient JavaScript ensures a smooth and lag-free experience.</li>
+    </ul>
+
+    <p data-translate="portfolioP52">This project allowed me to strengthen my skills in DOM manipulation, event handling, and responsive design. It also highlights my creativity and ability to develop applications that entertain and engage users.</p>
+
+    <a href="https://mehdi7228.github.io/drums_kit/" class="project-link" target="_blank">View Project</a>
+  </div>
+</div>
+              
+<!-- Project 6 -->
+<div class="project reverse">
+  <div class="project-image" style="float: right;">
+    <img src="./images/simon-game.png" alt="simon game">
+  </div>
+  <div class="project-details">
+    <h3 data-translate="portfolioH36">Simon Game</h3>
+    <p data-translate="portfolioP6">The Simon Game is a web-based recreation of the classic memory game that demonstrates my expertise in JavaScript, HTML, and CSS through an interactive and challenging user experience.</p>
+
+    <h4 data-translate="h46">Key Features:</h4>
+    <ul>
+      <li data-translate="keyli61">Dynamic Gameplay: The game generates a sequence of colors that players must memorize and repeat in the correct order. The sequence becomes progressively longer as the game advances.</li>
+      <li data-translate="keyli62">Responsive Design: The layout is fully responsive, ensuring a seamless experience across all devices, from desktops to mobile screens.</li>
+      <li data-translate="keyli64">State Management: Robust game logic handles states such as game start, user input validation, and game over scenarios.</li>
+      <li data-translate="keyli65">Replayability: The game encourages users to challenge themselves by improving their memory skills with every play.</li>
+    </ul>
+
+    <p data-translate="portfolioP62">This project showcases my ability to build interactive applications using JavaScript logic, event handling, and state management while ensuring a visually appealing and intuitive user interface.</p>
+
+    <a href="https://mehdi7228.github.io/simon-game/" class="project-link" target="_blank">View Project</a>
+  </div>
+</div>         
+          
+  </div>
+</section>
+
+    <hr>
+
+
+    <section id="contact" class="container contact-section">
+        <h2 data-translate="contactMeTitle" class="section-title">CONTACT ME</h2>
+        <div class="contact-container">
+          <!-- Send message Form -->
+          <div class="contact-form">
+            <h3 data-translate="sendMessage" class="tilted-title">Send me a message</h3>
+            <form action="https://formspree.io/f/mpwwrank" method="POST">
+              <input data-translate="name" type="text" name="name" placeholder="Your Name" required>
+              <input data-translate="email" type="email" name="email" placeholder="Your Email" required>
+              <textarea data-translate="yourMessage" name="message" rows="5" placeholder="Your Message" required></textarea>
+              <button data-translate="sendButton" type="submit" class="btn-submit">Send Message</button>
+            </form>
+            <p data-translate="messageSuccess" id="confirmation-message" style="display: none; color: green; margin-top: 10px;">
+                Your message has been sent successfully!
+            </p>
+          </div>
+      
+          <!-- Contact info-->
+          <div class="contact-info">
+            <h3 data-translate="infoTitle" class="tilted-title">Info</h3>
+            <div class="info-icons">
+              <!-- e-mail -->
+              <div class="icon">
+                <i class="bi bi-envelope"></i>
+                <span class="tooltip">mehdikhodaiee@gmail.com</span>
+              </div>
+              <!-- linkedin -->
+              <div class="icon">
+                <a href="https://www.linkedin.com/in/mehdi-khodaie-624a9333a/" target="_blank">
+                  <i class="bi bi-linkedin"></i>
+                </a>
+                <span class="tooltip">LinkedIn</span>
+              </div>
+
+            <!-- facebook -->
+            <div class="icon">
+                <a href="https://www.facebook.com/mehdi.khodaie.14" target="_blank">
+                    <i class="bi bi-facebook"></i>
+                </a>
+                <span class="tooltip">Facebook</span>
+            </div>
+            
+            <!-- instagram -->
+            <div class="icon">
+                <a href="https://instagram.com/" target="_blank">
+                    <i class="bi bi-instagram"></i>
+                </a>
+                <span class="tooltip">Instagram</span>
+            </div>
+                
+                <!-- (X) -->
+            <div class="icon">
+                <a href="https://x.com/mehdi0931417239" target="_blank">
+                    <i class="bi bi-twitter"></i>
+                </a>
+                <span class="tooltip">Twitter</span>
+            </div>
+          <!-- Github -->
+            <div class="icon">
+            <a href="https://github.com/mehdi7228" target="_blank">
+              <i class="bi bi-github"></i>
+            </a>
+                <span class="tooltip">GitHub</span>
+            </div>
+              <!-- Telegram -->
+              <div class="icon">
+                <a href="https://telegram.org/" target="_blank">
+                  <i class="bi bi-telegram"></i>
+                </a>
+                <span class="tooltip">Telegram</span>
+              </div>
+              <!-- whatsapp -->
+              <div class="icon">
+                <a href="https://whatsapp.com/" target="_blank">
+                  <i class="bi bi-whatsapp"></i>
+                </a>
+                <span class="tooltip">WhatsApp</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Back to Top Button -->
+    <button id="backToTop" class="btn btn-outline-light">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <div class="copy-right footer">
+        <p class="footer-p">© 2024 Mehdi KH. All rights reserved.</p>
+    </div>
+
+    <!-- Scripts -->
+    <script src="./scripts/translations.js"></script>
+    <script src="./scripts/app.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
