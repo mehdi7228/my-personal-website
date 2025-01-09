@@ -77,7 +77,8 @@ hr {
 
 a {
     cursor: pointer;
-    touch-action: manipulation;
+    touch-action: manipulation !important;
+    pointer-events: all !important;
 }
 
 /* Container Styling */
