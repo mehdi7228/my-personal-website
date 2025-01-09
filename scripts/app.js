@@ -39,30 +39,30 @@ document.querySelectorAll("a").forEach(anchor => {
 //     });
 // });
 
-document.querySelectorAll(".dropdown-item").forEach(item => {
-    item.addEventListener("click", handleLanguageChange);
-    item.addEventListener("touchstart", handleLanguageChange);
-});
+// document.querySelectorAll(".dropdown-item").forEach(item => {
+//     item.addEventListener("click", handleLanguageChange);
+//     item.addEventListener("touchstart", handleLanguageChange);
+// });
 
-function handleLanguageChange(event) {
-    event.preventDefault(); // جلوگیری از رفتار پیش‌فرض مرورگر
-    const selectedLang = event.target.getAttribute("data-lang");
-    if (selectedLang) {
-        changeLanguage(selectedLang); // تابعی که زبان را تغییر می‌دهد
-    }
-}
+// function handleLanguageChange(event) {
+//     event.preventDefault(); // جلوگیری از رفتار پیش‌فرض مرورگر
+//     const selectedLang = event.target.getAttribute("data-lang");
+//     if (selectedLang) {
+//         changeLanguage(selectedLang); // تابعی که زبان را تغییر می‌دهد
+//     }
+// }
 
-function changeLanguage(lang) {
-    // مثال ساده از تغییر محتوا بر اساس زبان
-    const translations = {
-        en: "Hello, welcome!",
-        fa: "سلام، خوش آمدید!",
-        tr: "Merhaba, hoş geldiniz!"
-    };
+// function changeLanguage(lang) {
+//     // مثال ساده از تغییر محتوا بر اساس زبان
+//     const translations = {
+//         en: "Hello, welcome!",
+//         fa: "سلام، خوش آمدید!",
+//         tr: "Merhaba, hoş geldiniz!"
+//     };
 
-    // اعمال ترجمه جدید به عنوان مثال
-    document.getElementById("content").innerText = translations[lang] || "Translation not available.";
-}
+//     // اعمال ترجمه جدید به عنوان مثال
+//     document.getElementById("content").innerText = translations[lang] || "Translation not available.";
+// }
 
 // Skills progress-bar functionality
 document.addEventListener("scroll", () => {
@@ -177,25 +177,34 @@ form.addEventListener("submit", (e) => {
 //translations
 document.addEventListener("DOMContentLoaded", () => {
     const languageDropdown = document.getElementById("language-dropdown");
-  
-    // change translate language
+    const dropdownButton = document.getElementById("dropdownLanguage");
+
+    // تغییر زبان بر اساس ترجمه‌ها
     const changeLanguage = (lang) => {
-      const elementsToTranslate = document.querySelectorAll("[data-translate]");
-      elementsToTranslate.forEach((element) => {
-        const key = element.getAttribute("data-translate");
-        element.textContent = translations[lang][key];
-      });
+        const elementsToTranslate = document.querySelectorAll("[data-translate]");
+        elementsToTranslate.forEach((element) => {
+            const key = element.getAttribute("data-translate");
+            if (translations[lang] && translations[lang][key]) {
+                element.textContent = translations[lang][key];
+            }
+        });
     };
-  
-    // change translate by click on language
-    languageDropdown.addEventListener("click", (event) => {
-      const selectedLang = event.target.getAttribute("data-lang");
-      if (selectedLang) {
-        changeLanguage(selectedLang);
-  
-        // show language on button
-        const dropdownButton = document.getElementById("dropdownLanguage");
-        dropdownButton.textContent = event.target.textContent;
-      }
+
+    // اضافه کردن رویداد کلیک و لمس برای dropdown items
+    document.querySelectorAll(".dropdown-item").forEach((item) => {
+        const handleEvent = (event) => {
+            event.preventDefault();
+            const selectedLang = item.getAttribute("data-lang");
+            if (selectedLang) {
+                changeLanguage(selectedLang);
+
+                // تغییر متن دکمه به زبان انتخاب‌شده
+                dropdownButton.innerHTML = item.innerHTML;
+            }
+        };
+
+        // پشتیبانی از کلیک و لمس
+        item.addEventListener("click", handleEvent);
+        item.addEventListener("touchstart", handleEvent, { passive: true });
     });
-  });
+});
