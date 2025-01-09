@@ -26,43 +26,37 @@ document.querySelectorAll("a").forEach(anchor => {
     });
 });
 
-// Language Dropdown Functionality
-// const dropdownButton = document.getElementById("dropdownLanguage");
-// const dropdownItems = document.querySelectorAll(".dropdown-item");
+//translations
+document.addEventListener("DOMContentLoaded", () => {
+    const languageDropdown = document.getElementById("language-dropdown");
+    const dropdownButton = document.getElementById("dropdownLanguage");
 
-// dropdownItems.forEach(item => {
-//     item.addEventListener("click", function (e) {
-//         e.preventDefault();
-//         const selectedLanguage = this.textContent;
-//         dropdownButton.textContent = selectedLanguage;
-//         dropdownButton.classList.add("selected-lang");
-//     });
-// });
+    // تغییر زبان بر اساس ترجمه‌ها
+    const changeLanguage = (lang) => {
+        const elementsToTranslate = document.querySelectorAll("[data-translate]");
+        elementsToTranslate.forEach((element) => {
+            const key = element.getAttribute("data-translate");
+            if (translations[lang] && translations[lang][key]) {
+                element.textContent = translations[lang][key];
+            }
+        });
+    };
 
-// document.querySelectorAll(".dropdown-item").forEach(item => {
-//     item.addEventListener("click", handleLanguageChange);
-//     item.addEventListener("touchstart", handleLanguageChange);
-// });
+    document.querySelectorAll(".dropdown-item").forEach((item) => {
+        const handleEvent = (event) => {
+            event.preventDefault();
+            const selectedLang = item.getAttribute("data-lang");
+            if (selectedLang) {
+                changeLanguage(selectedLang);
 
-// function handleLanguageChange(event) {
-//     event.preventDefault(); // جلوگیری از رفتار پیش‌فرض مرورگر
-//     const selectedLang = event.target.getAttribute("data-lang");
-//     if (selectedLang) {
-//         changeLanguage(selectedLang); // تابعی که زبان را تغییر می‌دهد
-//     }
-// }
+                dropdownButton.innerHTML = item.innerHTML;
+            }
+        };
 
-// function changeLanguage(lang) {
-//     // مثال ساده از تغییر محتوا بر اساس زبان
-//     const translations = {
-//         en: "Hello, welcome!",
-//         fa: "سلام، خوش آمدید!",
-//         tr: "Merhaba, hoş geldiniz!"
-//     };
-
-//     // اعمال ترجمه جدید به عنوان مثال
-//     document.getElementById("content").innerText = translations[lang] || "Translation not available.";
-// }
+        item.addEventListener("click", handleEvent);
+        item.addEventListener("touchstart", handleEvent, { passive: true });
+    });
+});
 
 // Skills progress-bar functionality
 document.addEventListener("scroll", () => {
@@ -171,40 +165,5 @@ form.addEventListener("submit", (e) => {
     })
     .catch(() => {
       alert("There was an error sending your message. Please try again.");
-    });
-});
-
-//translations
-document.addEventListener("DOMContentLoaded", () => {
-    const languageDropdown = document.getElementById("language-dropdown");
-    const dropdownButton = document.getElementById("dropdownLanguage");
-
-    // تغییر زبان بر اساس ترجمه‌ها
-    const changeLanguage = (lang) => {
-        const elementsToTranslate = document.querySelectorAll("[data-translate]");
-        elementsToTranslate.forEach((element) => {
-            const key = element.getAttribute("data-translate");
-            if (translations[lang] && translations[lang][key]) {
-                element.textContent = translations[lang][key];
-            }
-        });
-    };
-
-    // اضافه کردن رویداد کلیک و لمس برای dropdown items
-    document.querySelectorAll(".dropdown-item").forEach((item) => {
-        const handleEvent = (event) => {
-            event.preventDefault();
-            const selectedLang = item.getAttribute("data-lang");
-            if (selectedLang) {
-                changeLanguage(selectedLang);
-
-                // تغییر متن دکمه به زبان انتخاب‌شده
-                dropdownButton.innerHTML = item.innerHTML;
-            }
-        };
-
-        // پشتیبانی از کلیک و لمس
-        item.addEventListener("click", handleEvent);
-        item.addEventListener("touchstart", handleEvent, { passive: true });
     });
 });
