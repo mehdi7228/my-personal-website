@@ -27,17 +27,42 @@ document.querySelectorAll("a").forEach(anchor => {
 });
 
 // Language Dropdown Functionality
-const dropdownButton = document.getElementById("dropdownLanguage");
-const dropdownItems = document.querySelectorAll(".dropdown-item");
+// const dropdownButton = document.getElementById("dropdownLanguage");
+// const dropdownItems = document.querySelectorAll(".dropdown-item");
 
-dropdownItems.forEach(item => {
-    item.addEventListener("click", function (e) {
-        e.preventDefault();
-        const selectedLanguage = this.textContent; // Get selected language text
-        dropdownButton.textContent = selectedLanguage; // Update button text
-        dropdownButton.classList.add("selected-lang"); // Add a class for styling
-    });
+// dropdownItems.forEach(item => {
+//     item.addEventListener("click", function (e) {
+//         e.preventDefault();
+//         const selectedLanguage = this.textContent;
+//         dropdownButton.textContent = selectedLanguage;
+//         dropdownButton.classList.add("selected-lang");
+//     });
+// });
+
+document.querySelectorAll(".dropdown-item").forEach(item => {
+    item.addEventListener("click", handleLanguageChange);
+    item.addEventListener("touchstart", handleLanguageChange);
 });
+
+function handleLanguageChange(event) {
+    event.preventDefault(); // جلوگیری از رفتار پیش‌فرض مرورگر
+    const selectedLang = event.target.getAttribute("data-lang");
+    if (selectedLang) {
+        changeLanguage(selectedLang); // تابعی که زبان را تغییر می‌دهد
+    }
+}
+
+function changeLanguage(lang) {
+    // مثال ساده از تغییر محتوا بر اساس زبان
+    const translations = {
+        en: "Hello, welcome!",
+        fa: "سلام، خوش آمدید!",
+        tr: "Merhaba, hoş geldiniz!"
+    };
+
+    // اعمال ترجمه جدید به عنوان مثال
+    document.getElementById("content").innerText = translations[lang] || "Translation not available.";
+}
 
 // Skills progress-bar functionality
 document.addEventListener("scroll", () => {
