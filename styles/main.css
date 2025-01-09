@@ -181,6 +181,7 @@ a {
     text-decoration: none;
     cursor: pointer;
     touch-action: manipulation;
+    pointer-events: all;
 }
 
 .dropdown-menu .dropdown-item:hover {
