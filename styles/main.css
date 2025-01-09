@@ -179,6 +179,8 @@ a {
     transition: all 0.3s ease;
     border-radius: 4px;
     text-decoration: none;
+    cursor: pointer;
+    touch-action: manipulation;
 }
 
 .dropdown-menu .dropdown-item:hover {
