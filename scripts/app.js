@@ -12,6 +12,20 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+document.querySelectorAll("a").forEach(anchor => {
+    anchor.addEventListener("click", (e) => {
+        e.preventDefault();
+        const target = document.querySelector(anchor.getAttribute("href"));
+        target.scrollIntoView({ behavior: "smooth" });
+    });
+
+    anchor.addEventListener("touchstart", (e) => {
+        e.preventDefault();
+        const target = document.querySelector(anchor.getAttribute("href"));
+        target.scrollIntoView({ behavior: "smooth" });
+    });
+});
+
 // Language Dropdown Functionality
 const dropdownButton = document.getElementById("dropdownLanguage");
 const dropdownItems = document.querySelectorAll(".dropdown-item");
