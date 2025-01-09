@@ -13,17 +13,19 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 document.querySelectorAll("a").forEach(anchor => {
-    anchor.addEventListener("click", (e) => {
-        e.preventDefault();
-        const target = document.querySelector(anchor.getAttribute("href"));
-        target.scrollIntoView({ behavior: "smooth" });
-    });
+    if (anchor.getAttribute("href").startsWith("#")) {
+        anchor.addEventListener("click", (e) => {
+            e.preventDefault();
+            const target = document.querySelector(anchor.getAttribute("href"));
+            target.scrollIntoView({ behavior: "smooth" });
+        });
 
-    anchor.addEventListener("touchstart", (e) => {
-        e.preventDefault();
-        const target = document.querySelector(anchor.getAttribute("href"));
-        target.scrollIntoView({ behavior: "smooth" });
-    });
+        anchor.addEventListener("touchstart", (e) => {
+            e.preventDefault();
+            const target = document.querySelector(anchor.getAttribute("href"));
+            target.scrollIntoView({ behavior: "smooth" });
+        });
+    }
 });
 
 //translations
@@ -31,7 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const languageDropdown = document.getElementById("language-dropdown");
     const dropdownButton = document.getElementById("dropdownLanguage");
 
-    // تغییر زبان بر اساس ترجمه‌ها
     const changeLanguage = (lang) => {
         const elementsToTranslate = document.querySelectorAll("[data-translate]");
         elementsToTranslate.forEach((element) => {
