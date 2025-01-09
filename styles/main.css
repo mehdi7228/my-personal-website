@@ -76,7 +76,7 @@ hr {
 }
 
 a {
-    cursor: pointer;
+    cursor: pointer !important;
     touch-action: manipulation !important;
     pointer-events: all !important;
 }
@@ -486,6 +486,9 @@ a {
 .personal-info ul li a {
     color: #0dcaf0;
     text-decoration: none;
+    cursor: pointer;
+    touch-action: manipulation;
+    pointer-events: all;
 }
 
 .personal-info ul li a:hover {
@@ -802,6 +805,9 @@ a {
     color: #0dcaf0;
     text-decoration: none;
     transition: color 0.3s ease;
+    cursor: pointer;
+    touch-action: manipulation;
+    pointer-events: all;
 }
 
 .project-link:hover {
@@ -1036,6 +1042,9 @@ a {
     color: #1d78c1;
     text-decoration: none;
     transition: color 0.3s;
+    cursor: pointer;
+    touch-action: manipulation;
+    pointer-events: all;
 }
 
 .tooltip {
